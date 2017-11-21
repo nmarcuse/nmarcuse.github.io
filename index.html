@@ -1,4 +1,21 @@
 ---
 title: Artwork
 ---
-<p>Coming soon!</p>
+<style>
+    div.thumbnail-big {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+    }
+
+    img.thumbnail-big {
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+{% assign sorted_pages = site.pages | sort:'sort' %}
+{% for logopage in sorted_pages %}{% if logopage.fullsize %}
+<div class="thumbnail-big">
+    <a href="{{logopage.url}}"><img class="thumbnail-big" src="{{logopage.fullsize}}" alt="{{logopage.title}}" /></a>
+</div>
+{% endif %}{% endfor %}

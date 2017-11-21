@@ -6,11 +6,16 @@ title: Artwork
         width: 200px;
         height: 200px;
         display: inline-block;
+        text-align: center;
+        margin: 5px;
     }
 
     img.thumbnail-big {
         max-width: 200px;
         max-height: 200px;
+        box-shadow: 0 0 5px #1d1d1d;
+        border: solid #666 1px;
+        margin: 10px;
     }
 </style>
 {% assign sorted_pages = site.pages | sort:'sort' %}

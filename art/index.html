@@ -1,0 +1,31 @@
+---
+title: Artwork Inventory
+---
+<style>
+    img.thumbnail-small {
+    max-width: 48px;
+    max-height: 48px;
+    box-shadow: 0 0 2px #1d1d1d;
+    border: solid #666 1px;
+}
+</style>
+{% assign sorted_pages = site.pages | sort:'title' %}
+{% assign count = 0 %}
+<table class="table table-bordered table-striped" style="width:auto;">
+    <thead>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for logopage in sorted_pages %}{% if logopage.fullsize %}{% assign count = count | plus:1 %}
+        <tr>
+            <td style="text-align:center;"><a href="{{logopage.url}}"><img class="thumbnail-small" src="{{logopage.fullsize}}" alt="{{logopage.title}}" /></a></td>
+            <td>{{logopage.title}}</td>
+        </tr>
+    {% endif %}{% endfor %}
+    </tbody>
+</table>
+<p># of pieces: {{count}}</p>
+

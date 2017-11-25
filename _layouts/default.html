@@ -18,7 +18,9 @@
         {% if page.fullsize %}
         <div class="row">
             <div class="col-md-8">
-                <img class="img-fluid thumb-image" src="{{page.fullsize}}" alt="">
+                <a href="{{page.fullsize}}" data-toggle="lightbox">
+                    <img class="img-fluid thumb-image" src="{{page.fullsize}}" alt="" style="max-height: 80vh;">
+                </a>
             </div>
 
             <div class="col-md-4">
@@ -33,6 +35,12 @@
                 </ul>
             </div>
         </div>
+        <script>
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+        </script>
         {% endif %}
 
         <div class="row">

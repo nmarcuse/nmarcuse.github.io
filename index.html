@@ -1,26 +1,27 @@
 ---
 title: Artwork
+notitle: true
 ---
-<style>
-    div.thumbnail-big {
-        width: 200px;
-        height: 200px;
-        display: inline-block;
-        text-align: center;
-        margin: 5px;
-    }
-
-    img.thumbnail-big {
-        max-width: 200px;
-        max-height: 200px;
-        box-shadow: 0 0 5px #1d1d1d;
-        border: solid #666 1px;
-        margin: 10px;
-    }
-</style>
+<div class="row text-center text-lg-left">
 {% assign sorted_pages = site.pages | sort:'sort' %}
 {% for logopage in sorted_pages %}{% if logopage.fullsize %}
-<div class="thumbnail-big">
-    <a href="{{logopage.url}}"><img class="thumbnail-big" src="{{logopage.fullsize}}" alt="{{logopage.title}}" /></a>
-</div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+        <a href="{{logopage.url}}" class="d-block mb-4 h-100 thumb-container" style="">
+            <img class="img-fluid thumb-image" src="{{logopage.fullsize}}" alt="{{logopage.title}}" style="">
+            <!-- NO: images not vertically centered
+            <img class="img-fluid img-thumbnail" src="{{logopage.fullsize}}" alt="{{logopage.title}}">
+            -->
+            <!-- NO: stretched
+            <img class="img-fluid" alt="My image"
+                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                 style="width: 100%; background-image: url({{logopage.fullsize}}); background-size:100% 100%;">
+            -->
+            <!-- NO: cropped
+            <img class="img-fluid" alt="My image"
+                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                 style="width: 100%; background-image: url({{logopage.fullsize}}); background-size:cover;">
+            -->
+        </a>
+    </div>
 {% endif %}{% endfor %}
+</div>

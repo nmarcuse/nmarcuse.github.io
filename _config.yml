@@ -3,8 +3,8 @@
 #
 
 exclude: [ "CNAME", "README.md", "LICENSE.txt", "UNLICENSE.txt", "tmp", "*.sh", "**/*_src*" ]
-permalink: /blog/:year/:month/:day/:title/index.html
-production_url: https://nmarcuse.github.io
+permalink: /blog/:year/:month/:day/:title.:output_ext
+production_url: https://noah.marcuse.ink
 title: Noah Marcuse
 markdown: kramdown
 gems:

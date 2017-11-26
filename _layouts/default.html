@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{ site.title }} - {{ page.title }}</title>
-	{% if page.url == '/index.html'%}{% include meta-home.html %}{% endif %}
+    {% if page.url == '/' or page.url == '/index.html' %}{% include meta-home.html %}{% endif %}
 {% include meta.html %}
 </head>
 <body>

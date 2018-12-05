@@ -7,7 +7,7 @@ permalink: /blog/:year/:month/:day/:title.:output_ext
 production_url: https://noah.marcuse.ink
 title: Noah Marcuse
 markdown: kramdown
-gems:
+plugins:
   - jekyll-redirect-from
 defaults:
   -
